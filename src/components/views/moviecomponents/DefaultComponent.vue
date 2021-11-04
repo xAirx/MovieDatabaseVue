@@ -1,9 +1,9 @@
 <template>
   <!-------- TODO: LOGIC TO HANDLE PAGINATION-------->
-  <card :height="height">
+  <Card :height="height">
     <div v-if="loading">
       <li v-for="data in defaultMovies" :key="data.id">
-        <skeleton-component />
+        <SkeletonComponent />
       </li>
     </div>
     <div v-else>
@@ -57,14 +57,14 @@
 
             <v-col align-self="end">
               <v-chip class="text-uppercase ma-0" color="primary" label large>
-                <favorites-button :favorited-movie="data" />
+                <FavoritesButton :favorited-movie="data" />
               </v-chip>
             </v-col>
           </v-row>
         </v-img>
       </li>
     </div>
-  </card>
+  </Card>
 </template>
 
 <script lang="ts">

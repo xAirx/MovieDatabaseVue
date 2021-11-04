@@ -1,11 +1,13 @@
 <template>
   <button
     @click="
-    findIfFavorite
-      ? unfavoriteMovie('unfavoriteMovie')
-      : favoriteMovie('favoriteMovie')
+      findIfFavorite
+        ? unfavoriteMovie('unfavoriteMovie')
+        : favoriteMovie('favoriteMovie')
     "
-  >{{ buttonText }}</button>
+  >
+    {{ buttonText }}
+  </button>
 </template>
 
 <script lang="ts">
@@ -22,11 +24,7 @@ export default Vue.extend({
     },
   },
   computed: {
-    ...mapState([
-      "favorites",
-      "loading",
-      "error",
-    ]),
+    ...mapState(["favorites", "loading", "error"]),
     buttonText(): string {
       return this.findIfFavorite ? "Remove from Favorites" : "Add to favorites";
     },

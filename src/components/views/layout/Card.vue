@@ -11,18 +11,18 @@ import Vue from "vue";
 
 export default Vue.extend({
   name: "Card",
+  props: {
+    height: {
+      type: Number,
+      required: true,
+    },
+  },
 
   data() {
     return {
       absolute: true,
       hovered: true,
     };
-  },
-  props: {
-    height: {
-      type: Number,
-      required: true,
-    },
   },
 });
 </script>

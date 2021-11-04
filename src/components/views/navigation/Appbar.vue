@@ -1,5 +1,4 @@
 <template>
-
   <div>
     <v-app-bar app flat dark>
       <v-app-bar-nav-icon class="hidden-md-and-up" @click="TOGGLE_DRAWER" />
@@ -15,21 +14,33 @@
               max-width="110"
             />
           </router-link>
-          
-                   <toast-component />
+
+          <ToastComponent />
 
           <div
-            class="hidden-sm-and-down v-btn v-btn--flat v-btn--text theme--light v-size--default"
+            class="
+              hidden-sm-and-down
+              v-btn v-btn--flat v-btn--text
+              theme--light
+              v-size--default
+            "
           >
             <router-link active-class="active" to="/" exact>Home</router-link>
           </div>
           <div
-            class="hidden-sm-and-down v-btn v-btn--flat v-btn--text theme--light v-size--default"
+            class="
+              hidden-sm-and-down
+              v-btn v-btn--flat v-btn--text
+              theme--light
+              v-size--default
+            "
           >
-            <router-link active-class="active" to="/favorites/" exact>Favorites</router-link>
+            <router-link active-class="active" to="/favorites/" exact
+              >Favorites</router-link
+            >
           </div>
           <v-spacer />
-          <search-component />
+          <SearchComponent />
         </v-row>
       </v-container>
     </v-app-bar>
@@ -48,24 +59,20 @@ export default Vue.extend({
     ToastComponent,
   },
   methods: {
-    ...mapMutations(["TOGGLE_DRAWER","SHOW_SEARCH"]),
+    ...mapMutations(["TOGGLE_DRAWER", "SHOW_SEARCH"]),
   },
   computed: {
-     ...mapState([
-      "showSearch",
-    ]),
+    ...mapState(["showSearch"]),
   },
   watch: {
-    
-$route: function () {
+    $route: function () {
       if (this.$route.path !== "/") {
         this.SHOW_SEARCH(false);
       } else {
         this.SHOW_SEARCH(true);
       }
     },
-  }
- 
+  },
 });
 </script>
 

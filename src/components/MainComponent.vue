@@ -1,7 +1,7 @@
 <template>
   <div>
-    <default-component v-if="!movies.length" />
-    <movie-component v-else />
+    <DefaultComponent v-if="!movies.length" />
+    <MovieComponent v-else />
   </div>
 </template>
 
@@ -18,9 +18,7 @@ export default Vue.extend({
     DefaultComponent,
   },
   computed: {
-    ...mapState([
-      "movies",
-    ]),
+    ...mapState(["movies"]),
   },
 });
 </script>

@@ -2,13 +2,13 @@
   <div>
     <v-text-field
       v-if="showSearch"
+      v-model="searchQuery"
       append-icon="mdi-magnify"
       solo-inverted
       style="max-width: 500"
-      v-model="searchQuery"
       placeholder="Search for a Movie"
     />
-    <debounce :searchQuery="searchQuery" />
+    <Debounce :search-query="searchQuery" />
   </div>
 </template>
 <script lang="ts">
@@ -27,9 +27,7 @@ export default Vue.extend({
     };
   },
   computed: {
-    ...mapState([
-      "showSearch",
-    ])
+    ...mapState(["showSearch"]),
   },
   methods: {
     ...mapMutations(["SHOW_SEARCH"]),

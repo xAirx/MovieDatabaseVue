@@ -15,10 +15,7 @@
             <router-link to="/">Home</router-link>
           </div>
         </a>
-        <a
-          tabindex="0"
-          class="v-list-item v-list-item--link theme--dark"
-        >
+        <a tabindex="0" class="v-list-item v-list-item--link theme--dark">
           <div class="v-list-item__title">
             <router-link to="/favorites/">Favorites</router-link>
           </div>

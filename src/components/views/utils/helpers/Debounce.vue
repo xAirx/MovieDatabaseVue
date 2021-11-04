@@ -20,9 +20,7 @@ export default Vue.extend({
     },
   },
   computed: {
-    ...mapState([
-      "showSearch",
-    ]),
+    ...mapState(["showSearch"]),
   },
   methods: {
     ...mapActions(["retrieveMoviesData"]),

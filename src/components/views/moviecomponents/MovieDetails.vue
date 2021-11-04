@@ -1,8 +1,8 @@
 <template>
-  <card :height="height">
+  <Card :height="height">
     <div v-if="loading">
       <li v-for="data in movieDetails" :key="data.id">
-        <skeleton-component />
+        <SkeletonComponent />
       </li>
     </div>
     <div>
@@ -81,7 +81,7 @@
         </v-img>
       </li>
     </div>
-  </card>
+  </Card>
 </template>
 
 <script lang="ts">

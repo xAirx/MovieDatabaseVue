@@ -1,8 +1,8 @@
 <template>
   <v-app>
-    <app-bar />
-    <drawer />
-    <app-view />
+    <AppBar />
+    <Drawer />
+    <AppView />
   </v-app>
 </template>
 
@@ -14,6 +14,12 @@ export default {
     AppBar: () => import("@/components/views/navigation/Appbar.vue"),
     Drawer: () => import("@/components/views/navigation/Drawer.vue"),
     AppView: () => import("@/components/views/layout/View.vue"),
+  },
+  methods: {
+    test() {
+      const test = "";
+      return;
+    },
   },
 };
 </script>

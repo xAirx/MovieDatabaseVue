@@ -82,7 +82,6 @@ export default new Vuex.Store({
     },
 
     DELETE_FAVORITES(state, favoriteId: Favorite) {
-    
       const index = state.favorites.findIndex(
         (favorite) => favoriteId.id == favorite.id
       );
@@ -107,7 +106,6 @@ export default new Vuex.Store({
       try {
         const response = await ApiService.getDefaultMovies();
         commit("SET_DEFAULTMOVIES_DATA", response.data.results);
-      
       } catch (e) {
         commit("ERROR", e);
       } finally {
@@ -120,11 +118,10 @@ export default new Vuex.Store({
       try {
         const response = await ApiService.getMoviesData(query);
         commit("SET_MOVIES_DATA", response.data.results);
-       
       } catch (e) {
         commit("ERROR", e);
       } finally {
-        commit("LOADING", false); 
+        commit("LOADING", false);
       }
     },
 
@@ -136,7 +133,6 @@ export default new Vuex.Store({
       try {
         const response = await ApiService.getMovieDetails(movieId);
         commit("SET_MOVIE_DETAILS_DATA", response);
-       
       } catch (e) {
         commit("ERROR", e);
       } finally {
@@ -153,11 +149,9 @@ export default new Vuex.Store({
         return;
       }
       commit("SAVE_FAVORITES", chosenFavorite);
-     
     },
 
     removeFromFavorites({ commit, state }, favoriteId: number): void {
-    
       commit("DELETE_FAVORITES", favoriteId);
     },
 
@@ -165,7 +159,6 @@ export default new Vuex.Store({
 
     // ////////////////////////////// QUERY //////////////////////////// ////////////////////////////////////
     storeQuery({ commit }, query: string): void {
-     
       commit("SET_QUERY", query);
     },
 
@@ -174,7 +167,7 @@ export default new Vuex.Store({
 
   getters: {
     shouldLoadDefaultMovies(state): boolean {
-      return !state.defaultMovies.length; 
+      return !state.defaultMovies.length;
     },
     shouldLoadMovieDetails(state): boolean {
       return !state.movieDetails;

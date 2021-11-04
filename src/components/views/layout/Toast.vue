@@ -15,7 +15,7 @@
     </v-alert>
     <v-alert
       v-if="removedFavoriteSuccess"
-           border="bottom"
+      border="bottom"
       dark
       elevation="10"
       type="warning"
@@ -28,7 +28,7 @@
     </v-alert>
     <v-alert
       v-if="error"
-           border="bottom"
+      border="bottom"
       dark
       elevation="10"
       type="error"
@@ -52,10 +52,8 @@ export default Vue.extend({
 });
 </script>
 
-
 <style scoped lang="scss">
-
 .v-alert {
-  font-size:12px!important;
+  font-size: 12px !important;
 }
 </style>
