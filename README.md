@@ -1,4 +1,3 @@
-# merkleassignment
 
 ## Project setup
 ```
