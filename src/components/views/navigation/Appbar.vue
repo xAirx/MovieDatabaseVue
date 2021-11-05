@@ -65,7 +65,7 @@ export default Vue.extend({
     ...mapState(["showSearch"]),
   },
   watch: {
-    $route: function () {
+    $route() {
       if (this.$route.path !== "/") {
         this.SHOW_SEARCH(false);
       } else {

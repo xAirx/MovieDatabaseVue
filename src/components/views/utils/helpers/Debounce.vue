@@ -13,7 +13,7 @@ export default Vue.extend({
     searchQuery: String,
   },
   watch: {
-    searchQuery: function () {
+    searchQuery() {
       if (this.searchQuery.length) {
         this.expensiveOperation();
       }

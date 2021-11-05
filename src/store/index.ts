@@ -85,6 +85,7 @@ export default new Vuex.Store({
       const index = state.favorites.findIndex(
         (favorite) => favoriteId.id == favorite.id
       );
+
       if (index < 0) {
         throw new Error(
           `Could not find favorite with id '${favoriteId}'. This should never happen`
@@ -101,8 +102,9 @@ export default new Vuex.Store({
   actions: {
     // ////////////////////////////// Grab data from API via ApiService ///////////////////////////////////////
 
-    async retrieveDefaultMovies({ commit, state }): Promise<void> {
+    async retrieveDefaultMovies({ commit }): Promise<void> {
       commit("LOADING", true);
+
       try {
         const response = await ApiService.getDefaultMovies();
         commit("SET_DEFAULTMOVIES_DATA", response.data.results);
@@ -113,8 +115,9 @@ export default new Vuex.Store({
       }
     },
 
-    async retrieveMoviesData({ commit, state }, query: string): Promise<void> {
+    async retrieveMoviesData({ commit }, query: string): Promise<void> {
       commit("LOADING", true);
+
       try {
         const response = await ApiService.getMoviesData(query);
         commit("SET_MOVIES_DATA", response.data.results);
@@ -125,11 +128,9 @@ export default new Vuex.Store({
       }
     },
 
-    async retrieveMovieDetails(
-      { commit, state },
-      movieId: string
-    ): Promise<void> {
+    async retrieveMovieDetails({ commit }, movieId: string): Promise<void> {
       commit("LOADING", true);
+
       try {
         const response = await ApiService.getMovieDetails(movieId);
         commit("SET_MOVIE_DETAILS_DATA", response);
@@ -151,7 +152,7 @@ export default new Vuex.Store({
       commit("SAVE_FAVORITES", chosenFavorite);
     },
 
-    removeFromFavorites({ commit, state }, favoriteId: number): void {
+    removeFromFavorites({ commit }, favoriteId: number): void {
       commit("DELETE_FAVORITES", favoriteId);
     },
 

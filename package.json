@@ -8,7 +8,7 @@
     "format": "prettier --write .",
     "start": "cross-env NODE_ENV=development vue-cli-service serve",
     "build": "cross-env NODE_ENV=production  vue-cli-service build",
-    "commit": " precise-commits && yarn lint --fix && git-cz"
+    "commit": "precise-commits && yarn run lint && lint-staged && git-cz"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
@@ -65,6 +65,13 @@
   },
   "hooks": {
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+  },
+  "lint-staged": {
+    "src/**/*.{vue,js,ts}": [
+      "prettier --config .prettierrc --write",
+      "eslint --fix \"src/**/*.{vue,js,ts}\"",
+      "eslint \"src/**/*.{vue,js,ts}\""
+    ]
   },
   "commitlint": {
     "extends": [

@@ -40,6 +40,84 @@ module.exports = {
     "@typescript-eslint/no-unsafe-call": "warn",
     "@typescript-eslint/no-unsafe-assignment": "warn",
     "@typescript-eslint/no-unsafe-return": "warn",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        argsIgnorePattern: "^_",
+        ignoreRestSiblings: true,
+      },
+    ],
+    "@typescript-eslint/no-use-before-define": [
+      "warn",
+      {
+        functions: false,
+        classes: false,
+        variables: true,
+      },
+    ],
+    "import/no-extraneous-dependencies": "off",
+    "import/order": [
+      "off",
+      {
+        "newlines-between": "always",
+      },
+    ],
+    "no-case-declarations": "warn",
+    "no-else-return": "warn",
+    "no-param-reassign": "warn",
+    "no-undef": "off",
+    "no-var": "warn",
+    "object-shorthand": "warn",
+    "padding-line-between-statements": [
+      "warn",
+      {
+        blankLine: "always",
+        prev: "*",
+        next: "class",
+      },
+      {
+        blankLine: "always",
+        prev: "*",
+        next: "for",
+      },
+      {
+        blankLine: "always",
+        prev: "*",
+        next: "function",
+      },
+      {
+        blankLine: "always",
+        prev: "*",
+        next: "if",
+      },
+      {
+        blankLine: "always",
+        prev: "*",
+        next: "return",
+      },
+      {
+        blankLine: "always",
+        prev: "*",
+        next: "switch",
+      },
+      {
+        blankLine: "always",
+        prev: "*",
+        next: "try",
+      },
+      {
+        blankLine: "always",
+        prev: "*",
+        next: "while",
+      },
+      {
+        blankLine: "always",
+        prev: "block-like",
+        next: ["let", "const"],
+      },
+    ],
+    "prefer-const": "error",
   },
 
   overrides: [
