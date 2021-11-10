@@ -19,9 +19,9 @@ import Favorite from "@/services/types/Favorite";
 export default Vue.extend({
   name: "FavoritesButton",
   props: {
+    // eslint-disable-next-line vue/require-default-prop
     favoritedMovie: {
       type: [] as PropType<Favorite>,
-      default: [],
     },
   },
   computed: {
