@@ -20,12 +20,12 @@ export default Vue.extend({
   },
   watch: {
     searchQuery() {
-      if (this.searchQuery.length > 5) {
+      if (this.searchQuery.length >= 5) {
         this.expensiveOperation();
         this.callEmpty(false);
       }
 
-      if (this.searchQuery === "" && this.searchQuery.length < 4) {
+      if (this.searchQuery === "" && this.searchQuery.length <= 4) {
         this.callEmpty(true);
       }
     },
