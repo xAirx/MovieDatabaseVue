@@ -1,25 +1,25 @@
 ## Project setup
 
 ```
-npm install
+yarn install
 ```
 
 ### Compiles and hot-reloads for development
 
 ```
-npm start
+yarn start
 ```
 
 ### Compiles and minifies for production
 
 ```
-npm build
+yarn build
 ```
 
 ### Lints and fixes files
 
 ```
-npm lint
+yarn lint
 ```
 
 ### Customize configuration
