@@ -26,7 +26,9 @@ module.exports = {
   },
 
   rules: {
-    "explicit-module-boundary-types": "off",
+    "explicit-module-boundary-types": 0,
+    "no-unsafe-call": 0,
+    "no-var-requires": 0,
     "vue/component-name-in-template-casing": ["error", "PascalCase"],
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
