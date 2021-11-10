@@ -16,21 +16,29 @@ export default Vue.extend({
     },
   },
   computed: {
-    ...mapState(["showSearch"]),
+    ...mapState(["showSearch", "empty", "movies"]),
   },
   watch: {
     searchQuery() {
-      if (this.searchQuery.length) {
+      if (this.searchQuery.length > 5) {
         this.expensiveOperation();
+        this.callEmpty(false);
+      }
+
+      if (this.searchQuery === "" && this.searchQuery.length < 4) {
+        this.callEmpty(true);
       }
     },
   },
-
   methods: {
-    ...mapActions(["retrieveMoviesData"]),
+    ...mapActions(["retrieveMoviesData", "setEmpty"]),
     expensiveOperation: _.debounce(function (this: any) {
       this.retrieveMoviesData(this.searchQuery);
     }, 500),
+    callEmpty(payload) {
+      this.setEmpty(payload);
+      console.log(this.empty);
+    },
   },
 });
 </script>

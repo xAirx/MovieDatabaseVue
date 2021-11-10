@@ -5,6 +5,7 @@
       v-model="searchQuery"
       append-icon="mdi-magnify"
       solo-inverted
+      :rules="[rules.counter, rules.empty, rules.minfivechars]"
       style="max-width: 500"
       placeholder="Search for a Movie"
     />
@@ -15,6 +16,7 @@
 import Vue from "vue";
 import { mapMutations, mapState } from "vuex";
 import Debounce from "@/components/views/utils/helpers/Debounce.vue";
+import { isEmpty } from "lodash";
 
 export default Vue.extend({
   name: "SearchComponent",
@@ -24,10 +26,15 @@ export default Vue.extend({
   data() {
     return {
       searchQuery: "",
+      rules: {
+        counter: (value) => value.length <= 20 || "Max 20 characters",
+        minfivechars: (value) => value.length >= 5 || "Min 5 characters",
+        empty: (value) => !isEmpty(value) || "Please dont leave me empty",
+      },
     };
   },
   computed: {
-    ...mapState(["showSearch"]),
+    ...mapState(["showSearch", "Error", "Empty"]),
   },
   methods: {
     ...mapMutations(["SHOW_SEARCH"]),

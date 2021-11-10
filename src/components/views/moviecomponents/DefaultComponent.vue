@@ -60,6 +60,13 @@
                 <FavoritesButton :favorited-movie="data" />
               </v-chip>
             </v-col>
+            <v-col align-self="end">
+              <router-link :to="{ path: '/details/' + data.id }">
+                <v-chip class="ma-0" color="primary" label large
+                  >See details</v-chip
+                >
+              </router-link>
+            </v-col>
           </v-row>
         </v-img>
       </li>

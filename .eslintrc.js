@@ -35,7 +35,7 @@ module.exports = {
     "jest/expect-expect": "off",
     "jest/no-try-expect": "off",
     "@typescript-eslint/require-await": "warn",
-    "@typescript-eslint/no-floating-promises": "warn",
+    "@typescript-eslint/no-floating-promises": "off",
     "@typescript-eslint/no-unsafe-member-access": 0,
     "@typescript-eslint/restrict-template-expressions": "off",
     "@typescript-eslint/restrict-plus-operands": "warn",

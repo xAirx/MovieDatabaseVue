@@ -15,6 +15,7 @@ export default new Vuex.Store({
     defaultMovies: [] as DefaultMovieData[],
     loading: false,
     error: null as string | null,
+    empty: true,
     favorites: [] as Favorite[],
     drawer: false,
     query: null as string | null,
@@ -98,10 +99,18 @@ export default new Vuex.Store({
     SET_FAVORITES_EXISTS(state, payload: Favorite[]) {
       state.favorites = payload;
     },
+
+    SET_EMPTY(state, payload: boolean) {
+      state.empty = payload;
+      state.movies = [];
+    },
     /////////////////////////////////////////////////////////////////
   },
 
   actions: {
+    setEmpty({ commit }, payload: boolean) {
+      commit("SET_EMPTY", payload);
+    },
     // ////////////////////////////// Grab data from API via ApiService ///////////////////////////////////////
 
     async retrieveDefaultMovies({ commit }): Promise<void> {

@@ -58,9 +58,7 @@ export default Vue.extend({
     SearchComponent,
     ToastComponent,
   },
-  methods: {
-    ...mapMutations(["TOGGLE_DRAWER", "SHOW_SEARCH"]),
-  },
+
   computed: {
     ...mapState(["showSearch"]),
   },
@@ -72,6 +70,9 @@ export default Vue.extend({
         this.SHOW_SEARCH(true);
       }
     },
+  },
+  methods: {
+    ...mapMutations(["TOGGLE_DRAWER", "SHOW_SEARCH"]),
   },
 });
 </script>

@@ -21,6 +21,7 @@ export default Vue.extend({
   props: {
     favoritedMovie: {
       type: [] as PropType<Favorite>,
+      default: [],
     },
   },
   computed: {
