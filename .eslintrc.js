@@ -37,7 +37,7 @@ module.exports = {
     "@typescript-eslint/require-await": "warn",
     "@typescript-eslint/no-floating-promises": "warn",
     "@typescript-eslint/no-unsafe-member-access": 0,
-    "@typescript-eslint/restrict-template-expressions": "warn",
+    "@typescript-eslint/restrict-template-expressions": "off",
     "@typescript-eslint/restrict-plus-operands": "warn",
     "@typescript-eslint/no-unsafe-call": "off",
     "@typescript-eslint/no-unsafe-assignment": "warn",

@@ -26,11 +26,11 @@ export default new Vuex.Store({
 
   mutations: {
     ////////// SEARCH ///////////////////////////////////////
-    SHOW_SEARCH: (state, payload) => (state.showSearch = payload),
+    SHOW_SEARCH: (state, payload: boolean) => (state.showSearch = payload),
     ////////////////////////////////////////////////////////
 
     ////////// Query ///////////////////////////////////////
-    SET_QUERY: (state, payload) => (state.query = payload),
+    SET_QUERY: (state, payload: string) => (state.query = payload),
     ////////////////////////////////////////////////////////
 
     /////////////// DRAWER //////////////////////////////
@@ -70,11 +70,11 @@ export default new Vuex.Store({
 
     /////////////////// FAVORITES ///////////////////
 
-    REMOVED_FAVORITE_SUCCESS(state, payload) {
+    REMOVED_FAVORITE_SUCCESS(state, payload: boolean) {
       state.removedFavoriteSuccess = payload;
     },
 
-    FAVORITE_SUCCESS(state, payload) {
+    FAVORITE_SUCCESS(state, payload: boolean) {
       state.favoriteSuccess = payload;
     },
 
@@ -95,7 +95,7 @@ export default new Vuex.Store({
       state.favorites.splice(index, 1);
     },
 
-    SET_FAVORITES_EXISTS(state, payload) {
+    SET_FAVORITES_EXISTS(state, payload: Favorite[]) {
       state.favorites = payload;
     },
     /////////////////////////////////////////////////////////////////

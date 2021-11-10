@@ -10,7 +10,13 @@ import _ from "lodash";
 export default Vue.extend({
   name: "Debounce",
   props: {
-    searchQuery: String,
+    searchQuery: {
+      type: String,
+      default: "",
+    },
+  },
+  computed: {
+    ...mapState(["showSearch"]),
   },
   watch: {
     searchQuery() {
@@ -19,9 +25,7 @@ export default Vue.extend({
       }
     },
   },
-  computed: {
-    ...mapState(["showSearch"]),
-  },
+
   methods: {
     ...mapActions(["retrieveMoviesData"]),
     expensiveOperation: _.debounce(function (this: any) {
