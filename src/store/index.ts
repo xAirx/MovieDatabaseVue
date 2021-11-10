@@ -23,6 +23,7 @@ export default new Vuex.Store({
     showSearch: true,
     overlay: false,
   },
+
   mutations: {
     ////////// SEARCH ///////////////////////////////////////
     SHOW_SEARCH: (state, payload) => (state.showSearch = payload),

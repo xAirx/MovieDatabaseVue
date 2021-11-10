@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */ /*
-eslint-disable @typescript-eslint/explicit-module-boundary-types */
 <template>
   <v-app>
     <AppBar />
@@ -15,7 +13,7 @@ export default {
   components: {
     AppBar: () => import("@/components/views/navigation/Appbar.vue"),
     Drawer: () => import("@/components/views/navigation/Drawer.vue"),
-    AppView: () => import("@/components/views/layout/View.vue"),
+    AppView: () => import("@/components/views/layout/AppView.vue"),
   },
   methods: {
     test() {
