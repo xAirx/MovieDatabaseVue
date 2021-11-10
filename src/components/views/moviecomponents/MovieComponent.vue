@@ -82,7 +82,7 @@ export default Vue.extend({
   data() {
     return {
       baseimg: enums.BASEIMAGEURL,
-      height: "600",
+      height: 600,
     };
   },
   computed: {

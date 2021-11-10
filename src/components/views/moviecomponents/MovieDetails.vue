@@ -101,7 +101,7 @@ export default Vue.extend({
     return {
       baseimg: enums.BASEIMAGEURL,
       basevideo: enums.BASEVIDEO,
-      height: "1000",
+      height: 1000,
     };
   },
   computed: {

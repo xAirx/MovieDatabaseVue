@@ -86,8 +86,7 @@ export default Vue.extend({
     return {
       baseimg: enums.BASEIMAGEURL,
       absolute: true,
-      overlay: false,
-      height: "600",
+      height: 600,
     };
   },
   computed: {
