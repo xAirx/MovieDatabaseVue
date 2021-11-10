@@ -6,6 +6,6 @@
 
 <script lang="ts">
 export default {
-  name: "View",
+  name: "AppView",
 };
 </script>
