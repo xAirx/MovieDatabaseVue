@@ -29,7 +29,7 @@ export default Vue.extend({
       rules: {
         counter: (value) => value.length <= 20 || "Max 20 characters",
         minfivechars: (value) => value.length >= 5 || "Min 5 characters",
-        empty: (value) => !isEmpty(value) || "Please dont leave me empty",
+        empty: (value) => !isEmpty(value) || "Please don´t leave me empty",
       },
     };
   },
