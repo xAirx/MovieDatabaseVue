@@ -71,12 +71,9 @@ export default {
 
     const index = findIndex();
 
-    if (index < 0) {
-      throw new Error(
-        `Could not find favorite with id '${favoriteId}'. This should never happen`
-      );
+    if (index > -1) {
+      state.favorites.splice(index, 1);
     }
-    state.favorites.splice(state.foundIndex, 1);
   },
 
   SET_FAVORITES_EXISTS(state, payload: Favorite[]) {
